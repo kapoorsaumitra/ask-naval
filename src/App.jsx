@@ -1,6 +1,6 @@
 import './App.css'
 import { Hero } from './components/Hero'
-import { DotBackgroundDemo } from './components/DotBackground'
+// import { DotBackgroundDemo } from './components/DotBackground'
 
 function App() {
 
