@@ -1,4 +1,4 @@
-import navallogo from './src/assets/naval.jpg'
+import navallogo from '/src/assets/naval.jpg'
 
 export function Hero(){
     return(
