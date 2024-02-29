@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+root {
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 90%;
+  height: 90%;
 }
