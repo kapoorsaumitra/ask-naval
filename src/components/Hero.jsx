@@ -1,11 +1,11 @@
-import navallogo from '/src/assets/naval.jpg'
-
+import logo from '/src/assets/svg/full.svg'
 export function Hero(){
     return(
         <>
-            <div style={{width: '100%', height: '100%', paddingTop: 208, paddingBottom: 476, paddingLeft: 71, paddingRight: 71, background: 'white', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', display: 'inline-flex'}}>
-            <img style={{width: 284, height: 267}} src={navallogo} />
-            <input type="text" className=" w-full h-12 bg-neutral-700 rounded-[35px] shadow"/>
+            <div className=' flex flex-col items-center'>
+            <img  className='w-48 h-48 drop-shadow-2xl' src={logo}/>
+            
+            <input type="text" className=" w-96 h-12 bg-neutral-700 rounded-[35px] shadow-2xl text-white"/>
             
             
             </div>
