@@ -1,5 +1,4 @@
 import { motion } from "framer-motion"
-import logo from '/src/assets/svg/full.svg'
 
 const pathVariants = {
     hidden: {
@@ -38,7 +37,7 @@ export function Hero(){
         <>
             <div className=' flex flex-col items-center m-10 '> 
             {/* <img  className='w-48 h-48 drop-shadow-2xl' src={logo}/>  */}
-            <motion.svg className='w-48 h-48 drop-shadow-2xl m-10' width="462" height="672" viewBox="0 0 462 672" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <motion.svg className='w-60 h-60 drop-shadow-2xl m-10' width="462" height="672" viewBox="0 0 462 672" fill="none" xmlns="http://www.w3.org/2000/svg">
                 {/* shakal support horizontal */}
                 <motion.path variants={pathVariants} initial="hidden" animate="visibleFaster" d="M2.5 281.5C86 265 294.4 241.9 460 281.5" stroke="rgb(163 163 163)" strokeWidth="16"/>
                 {/* shakal ke beech ka */}
@@ -57,7 +56,7 @@ export function Hero(){
                 <motion.path variants={pathVariants} initial="hidden" animate="fast" d="M207.5 419.5H263" stroke="black" strokeWidth="16"/>
             </motion.svg>
 
-            <input type="text" className=" text-center w-96 h-12 bg-neutral-700 rounded-[35px] shadow-2xl text-white"/>
+            <input type="text" className=" text-center min-w-fit w-4/12 h-12 bg-neutral-700 rounded-[35px] shadow-2xl text-white"/>
 
             </div> 
             
