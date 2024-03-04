@@ -56,7 +56,7 @@ export function Hero(){
                 <motion.path variants={pathVariants} initial="hidden" animate="fast" d="M207.5 419.5H263" stroke="black" strokeWidth="16"/>
             </motion.svg>
 
-            <input type="text" className=" text-center min-w-fit w-4/12 h-12 bg-neutral-700 rounded-[35px] shadow-2xl text-white"/>
+            <input type="text" placeholder="hey, naval" className=" text-center min-w-fit w-4/12 h-12 bg-neutral-700 rounded-[35px] shadow-2xl text-white font-black "/>
 
             </div> 
             

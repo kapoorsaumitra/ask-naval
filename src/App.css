@@ -1,6 +1,8 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 root {
   background-color: white;
@@ -9,5 +11,5 @@ root {
   align-items: center;
   width: 90%;
   height: 90%;
-}
+};
 
