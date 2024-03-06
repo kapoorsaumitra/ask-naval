@@ -32,6 +32,24 @@ const pathVariants = {
         },
     }
 }
+
+const textboxVariants = {
+    hidden: { 
+        opacity: 0,
+        y: +100,
+        pathLength: 0,
+    },
+    visible: {
+        opacity: 1, 
+        y: 0,
+        pathLength:1,
+        transition: {
+            duration: 1.7,
+            ease: "easeInOut",
+        }
+    },
+  };
+
 export function Hero(){
     return(
         <>
@@ -56,8 +74,7 @@ export function Hero(){
                 <motion.path variants={pathVariants} initial="hidden" animate="fast" d="M207.5 419.5H263" stroke="black" strokeWidth="16"/>
             </motion.svg>
 
-            <input type="text" placeholder="hey, naval" className=" text-center min-w-fit w-4/12 h-12 bg-neutral-700 rounded-[35px] shadow-2xl text-white font-black "/>
-
+            <motion.input variants={textboxVariants} initial="hidden" animate="visible" type="text" placeholder="hey, naval" className=" text-center min-w-fit w-4/12 h-12 bg-neutral-700 rounded-[35px] shadow-2xl text-white font-black " />
             </div> 
             
         </>
