@@ -98,7 +98,7 @@ export function Hero(){
         type="text"
         value={inputValue}
         onChange={handleInputChange}
-        placeholder="seek wisdom here"
+        placeholder="seek wisdom here  "
         className="text-center min-w-fit w-4/12 h-12 bg-neutral-700 rounded-[35px] shadow-2xl text-white px-6"
       />
       {inputValue.trim() !== '' && (
