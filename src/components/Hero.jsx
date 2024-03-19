@@ -1,4 +1,8 @@
-import { motion } from "framer-motion"
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { IoArrowUpOutline } from "react-icons/io5";
+
+
 
 const pathVariants = {
     hidden: {
@@ -51,6 +55,17 @@ const textboxVariants = {
   };
 
 export function Hero(){
+    const [inputValue, setInputValue] = useState('');
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleSendClick = () => {
+    // Handle send button click
+    console.log('Send button clicked');
+    // Add your desired logic here
+  };
     return(
         <>
             <div className=' flex flex-col items-center m-10 '> 
@@ -74,7 +89,31 @@ export function Hero(){
                 <motion.path variants={pathVariants} initial="hidden" animate="fast" d="M207.5 419.5H263" stroke="black" strokeWidth="16"/>
             </motion.svg>
 
-            <motion.input variants={textboxVariants} initial="hidden" animate="visible" type="text" placeholder="hey, naval" className=" text-center min-w-fit w-4/12 h-12 bg-neutral-700 rounded-[35px] shadow-2xl text-white font-black " />
+            {/* <motion.input variants={textboxVariants} initial="hidden" animate="visible" type="text" placeholder="seek wisdom here  " className=" text-center min-w-fit w-4/12 h-12 bg-neutral-700 rounded-[35px] shadow-2xl text-white  " /> */}
+            <div className="relative">
+      <motion.input
+        variants={textboxVariants}
+        initial="hidden"
+        animate="visible"
+        type="text"
+        value={inputValue}
+        onChange={handleInputChange}
+        placeholder="seek wisdom here"
+        className="text-center min-w-fit w-4/12 h-12 bg-neutral-700 rounded-[35px] shadow-2xl text-white px-6"
+      />
+      {inputValue.trim() !== '' && (
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+        //   whileTap={{ scale: 0.9 }}
+          onClick={handleSendClick}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-1 px-3 rounded-md flex items-center justify-center"
+        >
+          <IoArrowUpOutline  className="mr-1 text-gray-800 " />
+          Send
+        </motion.button>
+      )}
+    </div>
+
             </div> 
             
         </>
