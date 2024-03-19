@@ -72,6 +72,7 @@ const textboxVariants = {
           const response = result.response;
           const text = response.text();
           console.log(text);
+          document.getElementById('output').innerHTML = text
   }
 
 export function Hero(){
@@ -106,7 +107,7 @@ export function Hero(){
 
             {/* <motion.input variants={textboxVariants} initial="hidden" animate="visible" type="text" placeholder="seek wisdom here  " className=" text-center min-w-fit w-4/12 h-12 bg-neutral-700 rounded-[35px] shadow-2xl text-white  " /> */}
             <div className="relative">
-              <motion.input
+              <motion.textarea
                 variants={textboxVariants}
                 initial="hidden"
                 animate="visible"
@@ -114,8 +115,9 @@ export function Hero(){
                 value={inputValue}
                 onChange={handleInputChange}
                 id = "userInput"
-                placeholder="seek wisdom here  "
-                className="text-center min-w-fit w-4/12 h-12 bg-neutral-700 rounded-[35px] shadow-2xl text-white px-6"
+                placeholder="seek wisdom here"
+                rows={1}
+                className="text-center px-16 py-2 min-w-fit w-4/12 resize-vertical bg-neutral-700 rounded-[35px] shadow-2xl text-white"
               />
               {inputValue.trim() !== '' && (
                 <motion.button
@@ -126,8 +128,9 @@ export function Hero(){
                 
                 </motion.button>
               )}
+              
             </div>
-
+            <div id="output"></div>
             </div> 
             
         </>
