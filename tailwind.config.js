@@ -13,7 +13,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'jetbrains-mono': ['JetBrains Mono', 'monospace'],
+      },
+    },
   },
   plugins: [ addVariablesForColors,
     function ({ matchUtilities, theme }: any) {

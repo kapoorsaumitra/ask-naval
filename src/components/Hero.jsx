@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { IoArrowUpOutline } from "react-icons/io5";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
 
 
 const pathVariants = {
@@ -72,7 +73,7 @@ const textboxVariants = {
           const response = result.response;
           const text = response.text();
           console.log(text);
-          document.getElementById('output').innerHTML = text
+          document.getElementById('output').innerHTML = marked.parse(text);
   }
 
 export function Hero(){
@@ -84,7 +85,7 @@ export function Hero(){
 
     return(
         <>
-            <div className=' flex flex-col items-center m-10 '> 
+            <div className=' flex flex-col items-center m-10 font-jetbrains-mono'> 
             {/* <img  className='w-48 h-48 drop-shadow-2xl' src={logo}/>  */}
             <motion.svg className='w-60 h-60 drop-shadow-2xl m-10' width="462" height="672" viewBox="0 0 462 672" fill="none" xmlns="http://www.w3.org/2000/svg">
                 {/* shakal support horizontal */}
@@ -117,7 +118,7 @@ export function Hero(){
                 id = "userInput"
                 placeholder="seek wisdom here"
                 rows={1}
-                className="text-center px-16 py-2 min-w-fit w-4/12 resize-vertical bg-neutral-700 rounded-[35px] shadow-2xl text-white"
+                className="text-center my-2 px-16 py-2 min-w-fit w-4/12 resize-vertical bg-neutral-700 rounded-[35px] shadow-2xl text-white"
               />
               {inputValue.trim() !== '' && (
                 <motion.button
@@ -130,7 +131,7 @@ export function Hero(){
               )}
               
             </div>
-            <div id="output"></div>
+            <div id="output" className=' my-6 max-w-3xl'></div>
             </div> 
             
         </>
